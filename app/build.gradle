@@ -70,7 +70,7 @@ dependencies {
     testImplementation DependenciesTesting.mockito
 
     // UI tests
-    androidTestImplementation DependenciesTesting.androidxTestRunner
+    androidTestImplementation DependenciesTesting.androidxTestJunit
     androidTestImplementation DependenciesTesting.espresso
 }
 

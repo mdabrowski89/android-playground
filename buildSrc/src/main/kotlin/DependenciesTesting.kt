@@ -19,8 +19,7 @@ object DependenciesTesting {
     const val mockito = "org.mockito:mockito-core:${VersionsTesting.mockito}"
     const val mockitoAndroid = "org.mockito:mockito-android:${VersionsTesting.mockitoAndroid}"
 
-    const val androidxTestRunner = "androidx.test:runner:${VersionsTesting.androidxTest}"
-    const val androidxTestRules = "androidx.test:rules:${VersionsTesting.androidxTest}"
+    const val androidxTestJunit = "androidx.test.ext:junit:${VersionsTesting.androidxTest}"
 
     const val androidxRoomTesting = "androidx.room:room-testing:${VersionsAndroidX.room}"
     const val androidxNavigationTesting = "androidx.navigation:navigation-testing:${VersionsAndroidX.navigation}"
