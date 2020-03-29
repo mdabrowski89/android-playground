@@ -1,0 +1,7 @@
+apply plugin: 'kotlin-android'
+apply from: '../../build-commons.gradle'
+apply from: '../../build-dependencies-test.gradle'
+
+dependencies {
+    api project(Modules.common)
+}

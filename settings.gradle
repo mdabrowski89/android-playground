@@ -1,2 +1,5 @@
 rootProject.name='android-playground'
 include ':app'
+include ':navigation'
+include ':features:transitions'
+include ':common'

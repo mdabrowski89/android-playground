@@ -1,0 +1,12 @@
+apply plugin: 'kotlin-android'
+
+dependencies {
+
+    // Unit tests
+    testImplementation DependenciesTesting.junit
+    testImplementation DependenciesTesting.mockito
+
+    // UI tests
+    androidTestImplementation DependenciesTesting.androidxTestJunit
+    androidTestImplementation DependenciesTesting.espresso
+}

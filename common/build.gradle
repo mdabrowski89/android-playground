@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply from: '../build-commons.gradle'
+
+dependencies {
+    api project(Modules.navigation)
+
+    api DependenciesCore.kotlinStd
+
+    api DependenciesAndroidX.coreKtx
+    api DependenciesAndroidX.appcompat
+    api DependenciesAndroidX.constraintLayout
+}

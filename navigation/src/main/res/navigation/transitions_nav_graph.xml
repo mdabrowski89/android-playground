@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transitions_nav_graph"
+    app:startDestination="@id/firstFragment"
+    >
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="pl.mobite.playground.transitions.FirstFragment"
+        android:label="FirstFragment"
+        >
+        <action
+            android:id="@+id/action_first_to_second"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/slide_in_to_left"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_to_right"
+            app:popExitAnim="@anim/slide_out_to_right"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="pl.mobite.playground.transitions.SecondFragment"
+        android:label="SecondFragment"
+        />
+</navigation>

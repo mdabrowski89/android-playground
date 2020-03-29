@@ -1,0 +1,33 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion VersionsSdk.compiledSdk
+    buildToolsVersion VersionsSdk.buildTools
+
+    defaultConfig {
+        minSdkVersion VersionsSdk.minSdk
+        targetSdkVersion VersionsSdk.targetSdk
+        versionCode VersionsSdk.versionCode
+        versionName VersionsSdk.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "3g"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
