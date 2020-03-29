@@ -3,7 +3,7 @@ apply from: '../build-commons.gradle'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {
-    api DependenciesAndroidX.navigationRuntimeKtx
     api DependenciesAndroidX.navigationFragmentKtx
-    api DependenciesAndroidX.navigationUiKtx
+    implementation DependenciesAndroidX.navigationRuntimeKtx
+    implementation DependenciesAndroidX.navigationUiKtx
 }
