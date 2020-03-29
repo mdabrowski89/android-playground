@@ -3,35 +3,89 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion VersionsSdk.compiledSdk
+    buildToolsVersion VersionsSdk.buildTools
 
     defaultConfig {
+        project.ext.appName = 'android-playground'
         applicationId "pl.mobite.playground"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion VersionsSdk.minSdk
+        targetSdkVersion VersionsSdk.targetSdk
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
     buildTypes {
-        release {
+        debug {
+            debuggable true
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "$project.ext.appName-dev"
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "app_name", project.ext.appName
         }
     }
 
+    dexOptions {
+        javaMaxHeapSize "3g"
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation DependenciesCore.kotlinStd
+
+    implementation DependenciesAndroidX.coreKtx
+    implementation DependenciesAndroidX.appcompat
+    implementation DependenciesAndroidX.constraintLayout
+
+    // Unit tests
+    testImplementation DependenciesTesting.junit
+    testImplementation DependenciesTesting.mockito
+
+    // UI tests
+    androidTestImplementation DependenciesTesting.androidxTestRunner
+    androidTestImplementation DependenciesTesting.espresso
+}
+
+task changeApkName() {
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (variant.name != "debug") {
+                def date = new Date().format("yyMMdd_HHmmss")
+                def fileName = "${project.ext.appName}_${variant.name}_${variant.versionName}_${date}.apk"
+                output.outputFileName = fileName
+            }
+        }
+    }
+}
+
+gradle.taskGraph.whenReady {
+    changeApkName
 }
