@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF8888"
     >
 
     <TextView
@@ -10,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="First fragment"
-        app:layout_constraintBottom_toTopOf="@+id/moveForwardButton"
+        android:text="Second fragment"
+        app:layout_constraintBottom_toTopOf="@+id/moveBackButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,14 +21,27 @@
         />
 
     <Button
-        android:id="@+id/moveForwardButton"
+        android:id="@+id/moveBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to next"
+        android:text="Go to prev"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
+
+    <FrameLayout
+        android:id="@+id/sharedView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="24dp"
+        android:background="@android:color/darker_gray"
+        android:transitionName="sharedElement"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

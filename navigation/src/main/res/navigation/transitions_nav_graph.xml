@@ -2,27 +2,33 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/transitions_nav_graph"
-    app:startDestination="@id/firstFragment"
+    app:startDestination="@id/centerFragment"
     >
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="pl.mobite.playground.transitions.FirstFragment"
-        android:label="FirstFragment"
+        android:id="@+id/centerFragment"
+        android:name="pl.mobite.playground.transitions.CenterFragment"
+        android:label="CenterFragment"
         >
         <action
-            android:id="@+id/action_first_to_second"
-            app:destination="@id/secondFragment"
-            app:enterAnim="@anim/slide_in_to_left"
-            app:exitAnim="@anim/slide_out_to_left"
-            app:popEnterAnim="@anim/slide_in_to_right"
-            app:popExitAnim="@anim/slide_out_to_right"
+            android:id="@+id/action_center_to_right"
+            app:destination="@id/rightFragment"
+            />
+        <action
+            android:id="@+id/action_center_to_bottom"
+            app:destination="@id/bottomFragment"
             />
     </fragment>
 
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="pl.mobite.playground.transitions.SecondFragment"
-        android:label="SecondFragment"
+        android:id="@+id/rightFragment"
+        android:name="pl.mobite.playground.transitions.RightFragment"
+        android:label="RightFragment"
+        />
+
+    <fragment
+        android:id="@+id/bottomFragment"
+        android:name="pl.mobite.playground.transitions.BottomFragment"
+        android:label="BottomFragment"
         />
 </navigation>
