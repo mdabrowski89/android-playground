@@ -12,7 +12,6 @@ class CenterFragment : BaseFragment(R.layout.fragment_center) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.translationZ = 0f
         moveRight.setOnClickListener {
             exitTransition = Slide(Gravity.START)
             val extras = FragmentNavigatorExtras(sharedView to "sharedElement")
