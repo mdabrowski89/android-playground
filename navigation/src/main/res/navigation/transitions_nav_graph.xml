@@ -2,33 +2,34 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/transitions_nav_graph"
-    app:startDestination="@id/centerFragment"
+    app:startDestination="@id/parentFragment"
     >
 
     <fragment
-        android:id="@+id/centerFragment"
-        android:name="pl.mobite.playground.transitions.CenterFragment"
-        android:label="CenterFragment"
+        android:id="@+id/parentFragment"
+        android:name="pl.mobite.playground.transitions.ParentFragment"
+        android:label="ParentFragment"
         >
         <action
-            android:id="@+id/action_center_to_right"
-            app:destination="@id/rightFragment"
-            />
-        <action
-            android:id="@+id/action_center_to_bottom"
-            app:destination="@id/bottomFragment"
+            android:id="@+id/action_parent_to_details"
+            app:destination="@id/detailsFragment"
             />
     </fragment>
 
     <fragment
-        android:id="@+id/rightFragment"
-        android:name="pl.mobite.playground.transitions.RightFragment"
-        android:label="RightFragment"
-        />
-
-    <fragment
-        android:id="@+id/bottomFragment"
-        android:name="pl.mobite.playground.transitions.BottomFragment"
-        android:label="BottomFragment"
-        />
+        android:id="@+id/detailsFragment"
+        android:name="pl.mobite.playground.transitions.DetailsFragment"
+        android:label="DetailsFragment"
+        >
+        <argument
+            android:name="isSlideFromRight"
+            android:defaultValue="false"
+            app:argType="boolean"
+            />
+        <argument
+            android:name="isSlideFromBottom"
+            android:defaultValue="false"
+            app:argType="boolean"
+            />
+    </fragment>
 </navigation>
