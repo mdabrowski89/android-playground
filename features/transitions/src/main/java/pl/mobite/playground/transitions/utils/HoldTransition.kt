@@ -1,4 +1,4 @@
-package pl.mobite.playground.transitions
+package pl.mobite.playground.transitions.utils
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -6,9 +6,12 @@ import android.transition.TransitionValues
 import android.transition.Visibility
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.transition.addListener
+import androidx.core.transition.doOnEnd
+import androidx.core.transition.doOnPause
+import androidx.core.transition.doOnResume
+import pl.mobite.playground.transitions.BuildConfig
 
-class Hold : Visibility() {
+class HoldTransition : Visibility() {
 
     override fun captureStartValues(transitionValues: TransitionValues?) {
         super.captureStartValues(transitionValues)
@@ -52,19 +55,14 @@ class Hold : Visibility() {
             if (animator == null) {
                 sceneRoot.removeView(startView)
             } else {
-                var listener: TransitionListener? = null
-                listener = addListener(
-                    onPause = { sceneRoot.removeView(startView) },
-                    onResume = {
-                        if (startView.parent == null) {
-                            sceneRoot.addView(startView, 0)
-                        }
-                    },
-                    onEnd = { transition ->
-                        sceneRoot.removeView(startView)
-                        transition.removeListener(listener)
-                    }
+                val listeners = mutableListOf(
+                    doOnPause { sceneRoot.removeView(startView) },
+                    doOnResume { startView.parent ?: sceneRoot.addView(startView, 0) }
                 )
+                listeners += doOnEnd { transition ->
+                    sceneRoot.removeView(startView)
+                    listeners.forEach { transition.removeListener(it) }
+                }
             }
             return animator
         }
@@ -76,10 +74,8 @@ class Hold : Visibility() {
         view: View?,
         startValues: TransitionValues?,
         endValues: TransitionValues?
-    ): Animator? {
-        return view?.let {
-            ObjectAnimator.ofFloat(it, "transitionAlpha", it.transitionAlpha)
-        }
+    ) = view?.let {
+        ObjectAnimator.ofFloat(it, "transitionAlpha", it.transitionAlpha)
     }
 
     companion object {

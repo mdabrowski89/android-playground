@@ -5,20 +5,27 @@ import android.transition.Slide
 import android.transition.TransitionInflater
 import android.view.Gravity
 import android.view.View
-import kotlinx.android.synthetic.main.fragment_right.*
+import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.main.fragment_details.*
 import pl.mobite.playground.common.BaseFragment
 
-class BottomFragment : BaseFragment(R.layout.fragment_bottom) {
+class DetailsFragment : BaseFragment(R.layout.fragment_details) {
+
+    private val args: DetailsFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enterTransition = Slide(Gravity.BOTTOM)
+        enterTransition = when {
+            args.isSlideFromBottom -> Slide(Gravity.BOTTOM)
+            args.isSlideFromRight -> Slide(Gravity.END)
+            else -> null
+        }
         sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        moveBackButton.setOnClickListener {
+        backButton.setOnClickListener {
             navController.popBackStack()
         }
     }

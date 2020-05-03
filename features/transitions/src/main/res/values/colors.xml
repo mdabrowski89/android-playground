@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkBackground">#262626</color>
+    <color name="lightBackground">#363636</color>
+    <color name="purpleTint">#bb86fc</color>
+</resources>
