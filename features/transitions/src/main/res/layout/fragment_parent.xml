@@ -19,12 +19,12 @@
         />
 
     <Button
-        android:id="@+id/showDetailsButton1"
+        android:id="@+id/transitionFromRightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/purpleTint"
-        android:text="@string/show_details_button1"
+        android:text="@string/transition_from_right_button"
         android:transitionName="sharedButton1"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
@@ -32,16 +32,42 @@
         />
 
     <Button
-        android:id="@+id/showDetailsButton2"
+        android:id="@+id/transitionFromBottomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/purpleTint"
-        android:text="@string/show_details_button2"
+        android:text="@string/transition_from_bottom_button"
         android:transitionName="sharedButton2"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/showDetailsButton1"
+        app:layout_constraintTop_toBottomOf="@+id/transitionFromRightButton"
+        />
+
+    <Button
+        android:id="@+id/animationFromRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/purpleTint"
+        android:text="@string/animation_from_right_button"
+        android:transitionName="sharedButton3"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/transitionFromBottomButton"
+        />
+
+    <Button
+        android:id="@+id/animationFromBottomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/purpleTint"
+        android:text="@string/animation_from_bottom_button"
+        android:transitionName="sharedButton4"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/animationFromRightButton"
         />
 
     <androidx.constraintlayout.widget.Guideline

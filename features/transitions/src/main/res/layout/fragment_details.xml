@@ -23,6 +23,19 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
+        <!--<Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/purpleTint"
+            android:text="@string/back_button"
+            android:transitionName="sharedView"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            />-->
+
         <FrameLayout
             android:id="@+id/backButtonLayout"
             android:layout_width="wrap_content"
@@ -39,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/purpleTint"
                 android:text="@string/back_button"
-                android:transitionName="sharedButton"
+                android:transitionName="sharedView"
                 />
         </FrameLayout>
 

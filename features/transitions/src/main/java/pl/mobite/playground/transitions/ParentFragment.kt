@@ -14,20 +14,32 @@ class ParentFragment : BaseFragment(R.layout.fragment_parent) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /** Slide details from the right */
-        showDetailsButton1.setOnClickListener {
+        transitionFromRightButton.setOnClickListener {
             // TODO, fix bug on Api 21: https://stackoverflow.com/questions/30083820/android-bug-in-slide-activity-transition
             exitTransition = Slide(Gravity.START)
             val action = ParentFragmentDirections.actionParentToDetails(isSlideFromRight = true)
-            val extras = FragmentNavigatorExtras(showDetailsButton1 to "sharedButton")
+            val extras = FragmentNavigatorExtras(transitionFromRightButton to "sharedView")
             navController.navigate(action, extras)
         }
 
-        /** Slide details from the bottom */
-        showDetailsButton2.setOnClickListener {
+        transitionFromBottomButton.setOnClickListener {
             exitTransition = HoldTransition()
             val action = ParentFragmentDirections.actionParentToDetails(isSlideFromBottom = true)
-            val extras = FragmentNavigatorExtras(showDetailsButton2 to "sharedButton")
+            val extras = FragmentNavigatorExtras(transitionFromBottomButton to "sharedView")
+            navController.navigate(action, extras)
+        }
+
+        animationFromRightButton.setOnClickListener {
+            exitTransition = null
+            val action = ParentFragmentDirections.actionParentToDetailsAnimRight()
+            val extras = FragmentNavigatorExtras(animationFromRightButton to "sharedView")
+            navController.navigate(action, extras)
+        }
+
+        animationFromBottomButton.setOnClickListener {
+            exitTransition = null
+            val action = ParentFragmentDirections.actionParentToDetailsAnimBottom()
+            val extras = FragmentNavigatorExtras(animationFromBottomButton to "sharedView")
             navController.navigate(action, extras)
         }
     }
