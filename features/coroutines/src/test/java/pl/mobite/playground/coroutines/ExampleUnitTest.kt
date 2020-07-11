@@ -1,4 +1,4 @@
-package pl.mobite.corutines
+package pl.mobite.playground.coroutines
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

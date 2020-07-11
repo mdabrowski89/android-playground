@@ -1,6 +1,6 @@
-include ':features:corutines'
 rootProject.name='android-playground'
-include ':app'
-include ':navigation'
-include ':features:transitions'
-include ':common'
+include Modules.app
+include Modules.navigation
+include Modules.transitions
+include Modules.coroutines
+include Modules.common
