@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: '../build-commons.gradle'
+apply from: "${project.rootDir}/build-common-android.gradle"
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {

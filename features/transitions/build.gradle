@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: '../../build-dependencies-feature.gradle'
+apply from: "${project.rootDir}/build-feature-dependencies.gradle"
 
 dependencies {
 
