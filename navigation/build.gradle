@@ -1,9 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: "${project.rootDir}/build-common-android.gradle"
-apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply from: "${project.rootDir}/build-navigation-dependencies.gradle"
 
 dependencies {
-    api DependenciesAndroidX.navigationFragmentKtx
-    implementation DependenciesAndroidX.navigationRuntimeKtx
-    implementation DependenciesAndroidX.navigationUiKtx
 }

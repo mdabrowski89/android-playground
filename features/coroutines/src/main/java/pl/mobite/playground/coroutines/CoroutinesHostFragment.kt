@@ -1,5 +1,5 @@
 package pl.mobite.playground.coroutines
 
-import pl.mobite.playground.common.BaseFragment
+import androidx.fragment.app.Fragment
 
-class CoroutinesHostFragment : BaseFragment(R.layout.fragment_coroutines_host)
+class CoroutinesHostFragment : Fragment(R.layout.fragment_coroutines_host)

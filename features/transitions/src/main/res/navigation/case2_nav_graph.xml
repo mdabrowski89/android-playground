@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/parentFragment"
-        android:name="pl.mobite.playground.transitions.ParentFragment"
+        android:name="pl.mobite.playground.transitions.case2.ParentFragment"
         android:label="ParentFragment"
         >
         <action
@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="pl.mobite.playground.transitions.DetailsFragment"
+        android:name="pl.mobite.playground.transitions.case2.DetailsFragment"
         android:label="DetailsFragment"
         >
         <argument
@@ -50,25 +50,4 @@
             app:argType="boolean"
             />
     </fragment>
-
-    <fragment
-        android:id="@+id/fragmentA"
-        android:name="pl.mobite.playground.transitions.simple.FragmentA"
-        android:label="FragmentA"
-        >
-        <action
-            android:id="@+id/action_A_to_B"
-            app:destination="@id/fragmentB"
-            app:enterAnim="@anim/slide_in_to_left"
-            app:exitAnim="@anim/slide_out_to_left"
-            app:popEnterAnim="@anim/slide_in_to_right"
-            app:popExitAnim="@anim/slide_out_to_right"
-            />
-    </fragment>
-
-    <fragment
-        android:id="@+id/fragmentB"
-        android:name="pl.mobite.playground.transitions.simple.FragmentB"
-        android:label="FragmentB"
-        />
 </navigation>

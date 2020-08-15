@@ -1,15 +1,18 @@
-package pl.mobite.playground.transitions
+package pl.mobite.playground.transitions.case2
 
 import android.os.Bundle
 import android.transition.Slide
 import android.transition.TransitionInflater
 import android.view.Gravity
 import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.main.fragment_details.*
+import kotlinx.android.synthetic.main.case2_fragment_details.*
 import pl.mobite.playground.common.BaseFragment
+import pl.mobite.playground.transitions.R.layout
 
-class DetailsFragment : BaseFragment(R.layout.fragment_details) {
+class DetailsFragment : Fragment(layout.case2_fragment_details) {
 
     private val args: DetailsFragmentArgs by navArgs()
 
@@ -26,7 +29,7 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         backButton.setOnClickListener {
-            navController.popBackStack()
+            findNavController().popBackStack()
         }
     }
 }

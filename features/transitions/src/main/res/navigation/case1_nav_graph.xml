@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/transitions_nav_graph"
+    app:startDestination="@id/parentFragment"
+    >
+
+    <fragment
+        android:id="@+id/parentFragment"
+        android:name="pl.mobite.playground.transitions.case1.ParentFragment"
+        android:label="ParentFragment"
+        >
+        <action
+            android:id="@+id/action_parent_to_details"
+            app:destination="@id/detailsFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="pl.mobite.playground.transitions.case1.DetailsFragment"
+        android:label="DetailsFragment"
+        />
+</navigation>
