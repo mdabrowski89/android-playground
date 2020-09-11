@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.case2_fragment_details.*
-import pl.mobite.playground.common.BaseFragment
 import pl.mobite.playground.transitions.R.layout
 
 class DetailsFragment : Fragment(layout.case2_fragment_details) {
