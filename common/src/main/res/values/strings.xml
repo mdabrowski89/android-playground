@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_button">Menu</string>
+    <string name="change_case_button">Change</string>
+</resources>

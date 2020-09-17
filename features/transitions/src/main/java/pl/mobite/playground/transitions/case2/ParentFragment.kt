@@ -8,11 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.case2_fragment_parent.*
-import pl.mobite.playground.common.BaseFragment
-import pl.mobite.playground.transitions. R.layout
+import pl.mobite.playground.transitions.R
 import pl.mobite.playground.transitions.utils.HoldTransition
 
-class ParentFragment : Fragment(layout.case2_fragment_parent) {
+class ParentFragment : Fragment(R.layout.case2_fragment_parent) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

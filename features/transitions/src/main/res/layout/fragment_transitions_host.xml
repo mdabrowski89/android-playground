@@ -5,13 +5,23 @@
     android:layout_height="match_parent"
     >
 
+    <pl.mobite.playground.common.ToolbarView
+        android:id="@+id/toolbarView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/transitionsNavHostFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/case1_nav_graph"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarView"
+        app:navGraph="@navigation/transitions_case1_nav_graph"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
