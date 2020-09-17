@@ -7,4 +7,10 @@
     <string name="animation_from_bottom_button">More (animation from bottom)</string>
     <string name="animation_from_right_button">More (animation from right)</string>
     <string name="back_button">Back</string>
+
+    <string name="transitions_case1_description">Case 1: Shared element transition with the same layouts - bug</string>
+    <string name="transitions_case2_description">Case 2: Shared element with fragment transition</string>
+    <string name="transitions_case3_description">Case 3: Shared element with nav graph animation</string>
+    <string name="transitions_case4_description">Case 4: Shared element with transition delay</string>
+    <string name="transitions_case5_description">Case 5: Shared element with recurring navigation</string>
 </resources>

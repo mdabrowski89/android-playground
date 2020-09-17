@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.case2_fragment_details.*
-import pl.mobite.playground.transitions.R.layout
+import pl.mobite.playground.transitions.R
 
-class DetailsFragment : Fragment(layout.case2_fragment_details) {
+class DetailsFragment : Fragment(R.layout.case2_fragment_details) {
 
     private val args: DetailsFragmentArgs by navArgs()
 

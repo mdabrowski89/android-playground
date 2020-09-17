@@ -1,3 +1,4 @@
 <resources>
-
+    <string name="feature_transition_button">Transitions</string>
+    <string name="feature_coroutines_button">Coroutines</string>
 </resources>

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorPrimaryDark"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
     >
 
@@ -14,14 +15,18 @@
         android:text="@string/menu_button"
         />
 
-    <Space
+    <TextView
+        android:id="@+id/currentCaseText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:textColor="@android:color/white"
+        android:paddingBottom="8dp"
+        android:textAlignment="center"
         />
 
     <Button
-        android:id="@+id/selectCaseButton"
+        android:id="@+id/changeCaseButton"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
