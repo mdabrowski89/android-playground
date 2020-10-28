@@ -1,8 +1,0 @@
-apply plugin: 'kotlin-android'
-apply from: "${project.rootDir}/build-common-android.gradle"
-apply from: "${project.rootDir}/build-common-dependencies.gradle"
-
-dependencies {
-    implementation project(Modules.common)
-    implementation project(Modules.navigation)
-}

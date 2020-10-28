@@ -1,6 +1,0 @@
-apply plugin: 'com.android.library'
-apply from: "${project.rootDir}/build-feature-dependencies.gradle"
-
-dependencies {
-    implementation DependenciesCore.kotlinCoroutinesCore
-}

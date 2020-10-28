@@ -1,6 +1,0 @@
-rootProject.name='android-playground'
-include Modules.app
-include Modules.navigation
-include Modules.transitions
-include Modules.coroutines
-include Modules.common

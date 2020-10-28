@@ -1,6 +1,0 @@
-apply plugin: 'com.android.library'
-apply from: "${project.rootDir}/build-common-android.gradle"
-apply from: "${project.rootDir}/build-navigation-dependencies.gradle"
-
-dependencies {
-}
