@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply from: "${project.rootDir}/build-feature-dependencies.gradle"
-apply from: "${project.rootDir}/build-navigation-dependencies.gradle"
+apply from: "${project.rootDir}/build-android.gradle"
 
 dependencies {
+    api project(Modules.navigation)
 }

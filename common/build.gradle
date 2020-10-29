@@ -1,7 +1,18 @@
 apply plugin: 'com.android.library'
-apply from: "${project.rootDir}/build-common-android.gradle"
-apply from: "${project.rootDir}/build-common-dependencies.gradle"
+apply from: "${project.rootDir}/build-android.gradle"
 
 dependencies {
-    implementation project(Modules.navigation)
+    api DependenciesCore.kotlinStd
+
+    api DependenciesAndroidX.coreKtx
+    api DependenciesAndroidX.appcompat
+    api DependenciesAndroidX.constraintLayout
+
+    // Unit tests
+    testImplementation DependenciesTesting.junit
+    testImplementation DependenciesTesting.mockito
+
+    // UI tests
+    androidTestImplementation DependenciesTesting.androidxTestJunit
+    androidTestImplementation DependenciesTesting.espresso
 }

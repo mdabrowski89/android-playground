@@ -50,11 +50,6 @@ class CoroutinesHostFragment : Fragment(R.layout.fragment_coroutines_host) {
         preferences.lastUsedCase = case.name
         when (case) {
             CASE_1 -> childNavController.setGraph(R.navigation.coroutines_case1_nav_graph)
-            // TODO: implement other graphs
-            else -> {
-                toast("Not yet implemented")
-                return
-            }
         }
 
         toolbarView.setText(getString(case.descriptionResId))

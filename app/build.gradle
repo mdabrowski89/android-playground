@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
-apply from: "${project.rootDir}/build-common-android.gradle"
-apply from: "${project.rootDir}/build-common-dependencies.gradle"
+apply from: "${project.rootDir}/build-android.gradle"
 
 android {
     defaultConfig {
@@ -25,8 +24,6 @@ android {
 }
 
 dependencies {
-    implementation project(Modules.common)
-    implementation project(Modules.navigation)
     implementation project(Modules.transitions)
     implementation project(Modules.coroutines)
 }

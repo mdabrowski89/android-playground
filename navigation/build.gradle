@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
-apply from: "${project.rootDir}/build-common-android.gradle"
-apply from: "${project.rootDir}/build-navigation-dependencies.gradle"
+apply from: "${project.rootDir}/build-android.gradle"
 
 dependencies {
+    api project(Modules.common)
+    api DependenciesAndroidX.navigationFragmentKtx
+    api DependenciesAndroidX.navigationRuntimeKtx
+    api DependenciesAndroidX.navigationUiKtx
 }
